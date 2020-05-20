@@ -1,0 +1,13 @@
+<div class="layout-column align-items-center mt-50">
+  <section class="layout-row align-items-center justify-content-center">
+    <input type="text" class="large" placeholder="Enter City eg Dallas"
+            data-test-id="app-input" [(ngModel)]= "search_term"/>
+    <button data-test-id="submit-button" (click)= "searchCity()">Search</button>
+  </section>
+​
+  <ul *ngIf="states.length" class="mt-50 slide-up-fade-in styled" data-test-id="city-data">
+      <li *ngFor="let state of states" class="py-10" >{{state}}</li>
+  </ul>
+​
+  <div *ngIf="search_term && !states.length" class="mt-50 slide-up-fade-in" data-test-id="no-result">No Results Found</div>
+</div>
